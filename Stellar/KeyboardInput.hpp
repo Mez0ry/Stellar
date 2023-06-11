@@ -1,5 +1,5 @@
-#ifndef __KEYBOARD_INPUT__HPP
-#define __KEYBOARD_INPUT__HPP
+#ifndef __KEYBOARD_INPUT__HPP__
+#define __KEYBOARD_INPUT__HPP__
 #include <bitset>
 #include "SDL2/SDL_keyboard.h"
 
@@ -32,4 +32,4 @@ class KeyboardInput{
  private:
  std::bitset<351> m_Keys;
 };
-#endif //!__KEYBOARD_INPUT__HPP
+#endif //!__KEYBOARD_INPUT__HPP__

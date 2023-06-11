@@ -1,5 +1,5 @@
-#ifndef _VECTOR_HPP
-#define _VECTOR_HPP
+#ifndef __VECTOR_HPP__
+#define __VECTOR_HPP__
 #include <algorithm>
 #include <math.h>
 #include <iostream>
@@ -206,4 +206,4 @@ struct std::hash<Vec2>
   }
 };
 
-#endif //!_VECTOR_HPP
+#endif //!__VECTOR_HPP__

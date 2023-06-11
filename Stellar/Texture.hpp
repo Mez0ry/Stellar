@@ -125,7 +125,7 @@ public:
   
   /**
    * @return Returns the number of different shared_ptr instances (this included) managing inner SDL_Texture pointer
-   */
+  */
   long TextureUseCount() { return m_Texture.use_count(); }
 
   void UpdateTexturePixels(const SDL_Rect *rect, const void *pixels, int pitch);

@@ -11,9 +11,14 @@ Text::Text(const Base::Ref<Renderer> renderer,const char* font_path,int font_siz
   LoadText(renderer,text,m_Color);
 }
 
+Text::Text(Renderer& renderer,const char *font_path, int font_size, const char *text, const SDL_Color& color) : m_Color(color){
+  LoadFont(font_path,font_size);
+  LoadText(renderer,text,m_Color);
+}
+
 Text::~Text() noexcept
 {
-   Reset();
+  Reset();
 }
 
 Base::Ref<TTF_Font> Text::LoadFont(const char *path, int font_size)

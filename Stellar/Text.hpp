@@ -1,5 +1,5 @@
-#ifndef SnakeGame_FONT_MANAGER_HPP
-#define SnakeGame_FONT_MANAGER_HPP
+#ifndef __TEXT_HPP__
+#define __TEXT_HPP__
 
 #include "Vector.hpp"
 #include "Base.hpp"
@@ -22,7 +22,7 @@ class Text{
 public:
   Text() noexcept;
   Text(const Base::Ref<Renderer> renderer,const char *font_path, int font_size, const char *text, const Color &color);
-  Text(Renderer& renderer,const char *font_path, int font_size, const char *text, const Color &color);
+  Text(Renderer& renderer,const char *font_path, int font_size, const char *text, const SDL_Color &color);
   ~Text() noexcept;
 
   Text(Text &&other) {
@@ -76,4 +76,4 @@ private:
   Texture m_Texture;
   SDL_Color m_Color;
 };
-#endif //! SnakeGame_FONT_MANAGER_HPP
+#endif //! __TEXT_HPP__
