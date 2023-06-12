@@ -6,12 +6,12 @@
 struct SourceRect {};
 struct DestRect {};
 
-template <typename, typename = DestRect> constexpr bool is_dst_rect_v;
+template <typename, typename = DestRect> constexpr bool is_dst_rect_v = false;
 
 template <typename T>
 constexpr bool is_dst_rect_v<T, DestRect> = std::is_same<T, DestRect>::value;
 
-template <typename, typename = SourceRect> constexpr bool is_src_rect_v;
+template <typename, typename = SourceRect> constexpr bool is_src_rect_v = false;
 
 template <typename T>
 constexpr bool is_src_rect_v<T, SourceRect> = std::is_same<T, SourceRect>::value;

@@ -64,7 +64,7 @@ public:
   Texture& LoadText(const Base::Ref<Renderer> renderer,const char *text, const Color &color);
   Texture& LoadText(Renderer& renderer,const char *text, const Color &color);
 
-  void ShareFont(Base::Ref<TTF_Font>&& font);
+  void ShareFont(const Base::Ref<TTF_Font>& font);
   void Reset();
   void ResetFont();
 

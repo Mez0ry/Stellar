@@ -43,7 +43,7 @@ void Texture::ShareSDLTexture(const Texture& texture) {
   m_Texture = texture.m_Texture;
 }
 
-void Texture::ShareSDLTexture(const Base::Ref<SDL_Texture> & texture) {
+void Texture::ShareSDLTexture(const Base::Ref<SDL_Texture> texture) {
   Reset();
   m_Texture = texture;
 }

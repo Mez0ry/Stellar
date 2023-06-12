@@ -67,7 +67,7 @@ Texture& Text::LoadText(Renderer& renderer,const char *text, const Color &color)
   return m_Texture;
 }
 
-void Text::ShareFont(Base::Ref<TTF_Font>&& font)
+void Text::ShareFont(const Base::Ref<TTF_Font>& font)
 {
   this->m_font = std::move(font);
 }

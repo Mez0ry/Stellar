@@ -120,7 +120,7 @@ public:
   [[nodiscard]] static Base::Ref<SDL_Texture> CreateTexture(const Renderer& renderer, uint32_t format, int access, int w, int h);
 
   void ShareSDLTexture(const Texture &texture);
-  void ShareSDLTexture(const Base::Ref<SDL_Texture> &texture);
+  void ShareSDLTexture(const Base::Ref<SDL_Texture> texture);
   void Reset();
   
   /**
