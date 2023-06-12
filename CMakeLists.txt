@@ -47,10 +47,15 @@ Stellar/init_library.hpp
 Stellar/Color.hpp
 Stellar/Base.hpp
 
+Stellar/EventHandler.hpp
+Stellar/EventHandler.cpp
+
+Stellar/MouseInput.hpp
+
 Stellar/WindowInput.hpp
 Stellar/Window.hpp
 Stellar/Window.cpp
-	
+
 Stellar/Text.hpp
 Stellar/Text.cpp
 	
@@ -66,8 +71,6 @@ Stellar/Renderer.cpp
 Stellar/Logger.hpp
 Stellar/Logger.cpp
 	
-Stellar/EventHandler.hpp
-Stellar/EventHandler.cpp
 	
 Stellar/Vector.hpp
 Stellar/TextureGuard.hpp
