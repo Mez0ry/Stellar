@@ -104,7 +104,7 @@ public:
   Base::Ref<SDL_Texture> LoadTexture(Renderer& renderer, const std::string &path, Deleter deleter = TextureDeleter()){
     Reset();
 
-    m_Texture = std::move(Base::Ref<SDL_Texture>(IMG_LoadTexture(renderer,path.c_str()),deleter));
+    m_Texture = Base::Ref<SDL_Texture>(IMG_LoadTexture(renderer,path.c_str()),deleter);
     if(m_Texture == nullptr){
       STELLAR_CORE_ERROR("Texture::LoadTexture(Renderer& renderer,const std::string &path : {0}), Failed to load texture, Failed at {1}:{2}",path,STELLAR_FILENAME,STELLAR_LINE);
       return nullptr;

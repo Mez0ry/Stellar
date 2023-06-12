@@ -5,7 +5,7 @@ Surface::Surface() noexcept : m_Surface(nullptr){
 }
 
 Surface::Surface(SDL_Surface* surface) : m_Surface(nullptr){
-  m_Surface = std::move(SurfaceCreator(surface).CreateSurface());
+  m_Surface = SurfaceCreator(surface).CreateSurface();
 }
 
 Surface::Surface(const std::string& path) : m_Surface(nullptr){
@@ -18,7 +18,7 @@ Surface::~Surface() noexcept{
 
 Base::Ref<SDL_Surface> Surface::LoadSurface(const std::string& image_path){
   Reset();
-  m_Surface = std::move(SurfaceCreator(image_path).CreateSurface());
+  m_Surface = SurfaceCreator(image_path).CreateSurface();
   
   return m_Surface;
 }

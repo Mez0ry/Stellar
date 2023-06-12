@@ -8,7 +8,7 @@
 class Texture;
 
 class Text;
-class Vec2;
+struct Vec2;
 class Surface;
 
 class Renderer {
