@@ -10,6 +10,8 @@ struct Vec2 {
   Vec2() : x(0),y(0){}
   Vec2(int pos_x, int pos_y) : x(pos_x), y(pos_y) {}
   Vec2(const Vec2& other){x = other.x; y = other.y; }
+  Vec2(Vec2&& other) : x(other.x),y(other.y) {}
+  
   ~Vec2() = default;
   
   friend void swap(Vec2& lhs, Vec2& rhs){
@@ -62,9 +64,8 @@ struct Vec2 {
     double magnitude = Magnitude();
     if(magnitude == 0) return {0,0};
 
-    float inv_mag = 1.0f / magnitude;
-    const Vec2 cpy = {static_cast<int>((x * inv_mag)), static_cast<int>((y * inv_mag))};
-    return cpy;
+    double inv_mag = 1.0f / magnitude;
+    return {static_cast<int>(((x * inv_mag) + 0.5f)), static_cast<int>(((y * inv_mag) + 0.5f))};
   }
   
   Vec2 PositivePerpendicular() const

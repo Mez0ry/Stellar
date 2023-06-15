@@ -30,7 +30,26 @@ struct ObjectSize {
   friend ObjectSize operator-(ObjectSize lhs, const ObjectSize &rhs) {
     return (lhs -= rhs);
   }
-  
+
+  ObjectSize& operator/=(const ObjectSize& rhs){
+    this->w_ /= rhs.w_;
+    this->h_ /= rhs.h_;
+    return (*this);
+  }
+
+  friend ObjectSize operator/(ObjectSize lhs, const ObjectSize& rhs){
+    return (lhs / rhs);
+  }
+
+  ObjectSize& operator/=(int rhs){
+    this->w_ /= rhs;
+    this->h_ /= rhs;
+    return (*this);
+  }
+
+  friend ObjectSize operator/(ObjectSize lhs,int rhs){
+    return lhs / rhs;
+  }
 private:
   int w_, h_;
 };
