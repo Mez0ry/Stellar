@@ -59,8 +59,10 @@ public:
   operator Texture&() noexcept{
     return m_Texture;
   }
-
+  
   Base::Ref<TTF_Font> LoadFont(const char *path, int font_size);
+  [[nodiscard]] static Base::Ref<TTF_Font> StaticLoadFont(const char *path, int font_size);
+
   Texture& LoadText(const Base::Ref<Renderer> renderer,const char *text, const Color &color);
   Texture& LoadText(Renderer& renderer,const char *text, const Color &color);
 
@@ -70,7 +72,7 @@ public:
 
   Texture& GetTextTexture() {return m_Texture;}
   const Texture& GetTextTexture() const {return m_Texture;}
-  
+
 private:
   Base::Ref<TTF_Font> m_font;
   Texture m_Texture;

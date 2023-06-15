@@ -21,15 +21,25 @@ Text::~Text() noexcept
   Reset();
 }
 
-Base::Ref<TTF_Font> Text::LoadFont(const char *path, int font_size)
-{
-  TTF_Font* font = TTF_OpenFont(path, font_size);
-  m_font = Base::Ref<TTF_Font>(font,TTF_FontDeleter());
-  if (m_font == nullptr)
-  {
-    STELLAR_CORE_ERROR("Text::LoadFont, Failed to open font, SDL_ttf Error: {0}, Failed at {1}:{2}", TTF_GetError(),STELLAR_FILENAME,STELLAR_LINE);
-  }
+Base::Ref<TTF_Font> Text::LoadFont(const char *path, int font_size){
+  m_font = Text::StaticLoadFont(path,font_size);
   return m_font;
+}
+
+[[nodiscard]] Base::Ref<TTF_Font> Text::StaticLoadFont(const char *path, int font_size)
+{
+  
+  TTF_Font* font = TTF_OpenFont(path, font_size);
+
+  auto final_font = Base::Ref<TTF_Font>(font,TTF_FontDeleter());
+
+  if (final_font == nullptr)
+  {
+    STELLAR_CORE_ERROR("static Text::LoadFont(path: {0},path: {1}), Failed to open font, SDL_ttf Error: {2}, Failed at {3}:{4}",path,font_size,TTF_GetError(),STELLAR_FILENAME,STELLAR_LINE);
+  }
+
+  return final_font;
+  
 }
 
 Texture& Text::LoadText(const Base::Ref<Renderer> renderer,const char *text, const Color &color)
