@@ -65,7 +65,10 @@ struct Vec2 {
     if(magnitude == 0) return {0,0};
 
     double inv_mag = 1.0f / magnitude;
-    return {static_cast<int>(((x * inv_mag) + 0.5f)), static_cast<int>(((y * inv_mag) + 0.5f))};
+    double res_x = (x * (inv_mag * 1.6));
+    double res_y = (y * (inv_mag * 1.6));
+    
+    return {static_cast<int>(res_x),static_cast<int>(res_y)};
   }
   
   Vec2 PositivePerpendicular() const
