@@ -17,6 +17,9 @@ public:
   
   bool IsQuit() const {return m_IsQuit;}
   bool OnMouseMotion() const {return m_MouseInMotion;}
+  bool OnMouseButtonUp() const {return m_MouseButtonUp;}
+  bool OnMouseButtonDown() const {return m_MouseButtonDown;}
+  
   void PollEvents();
   
   KeyboardInput& GetKeyboardInput() {return m_KeyboardInput;}
@@ -30,5 +33,7 @@ private:
   MouseInput m_MouseInput;
   bool m_IsQuit;
   bool m_MouseInMotion;
+  bool m_MouseButtonUp;
+  bool m_MouseButtonDown;
 };
 #endif //!__EVENT_HANDLER_HPP__

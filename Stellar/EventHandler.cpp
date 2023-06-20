@@ -3,6 +3,8 @@
 void EventHandler::PollEvents(){
     m_WindowInput.Reset();
     m_MouseInMotion = false;
+    m_MouseButtonUp = false;
+    m_MouseButtonDown = false;
 
     while(SDL_PollEvent(&m_Event)){
     switch(m_Event.type){
@@ -26,10 +28,12 @@ void EventHandler::PollEvents(){
       }
       case SDL_MOUSEBUTTONDOWN:{
         m_MouseInput[m_Event.button.button] = true;
+        m_MouseButtonDown = true;
         break;
       }
       case SDL_MOUSEBUTTONUP:{
         m_MouseInput[m_Event.button.button] = false;
+        m_MouseButtonUp = true;
         break;
       }
       case SDL_MOUSEMOTION:{
